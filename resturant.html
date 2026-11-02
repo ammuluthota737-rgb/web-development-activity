@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Royal Taste Restaurant</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffaf3;
+    color: #333;
+}
+
+/* Navigation */
+header {
+    background: #25180f;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #e9b66b;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 12px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e9b66b;
+}
+
+/* Hero */
+.hero {
+    min-height: 500px;
+    background: linear-gradient(#0008, #0008),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600")
+    center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    color: #f3c783;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.btn {
+    background: #b77935;
+    color: white;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #75451d;
+}
+
+/* General sections */
+section {
+    padding: 65px 8%;
+}
+
+.heading {
+    text-align: center;
+    color: #8c5428;
+    font-size: 35px;
+    margin-bottom: 35px;
+}
+
+/* Menu */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px #0002;
+    transition: 0.3s;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px #0003;
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: #75451d;
+    margin: 15px;
+    font-size: 22px;
+}
+
+.card p {
+    color: #666;
+    padding: 0 12px;
+    line-height: 1.5;
+}
+
+.price {
+    color: #b77935;
+    font-weight: bold;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+/* Chef section */
+.chef {
+    background: #f5eadd;
+}
+
+/* Ambience */
+.ambience img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.ambience img:hover {
+    transform: scale(1.04);
+}
+
+/* Testimonials */
+.review {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #0002;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.review h3 {
+    color: #b77935;
+    margin-top: 15px;
+}
+
+/* Reservation */
+.reservation {
+    background: #f5eadd;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #0002;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+form button {
+    width: 100%;
+    padding: 14px;
+    background: #8c5428;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+form button:hover {
+    background: #5e3519;
+}
+
+/* Contact */
+.contact {
+    text-align: center;
+    line-height: 2;
+}
+
+/* Footer */
+footer {
+    background: #25180f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Mobile responsive */
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 6px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+    <div class="logo">🍽 Royal Taste</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#chefs">Chefs</a>
+        <a href="#ambience">Ambience</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#reservation">Reservation</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Home -->
+<div class="hero" id="home">
+    <h1>Welcome to Royal Taste</h1>
+    <p>Delicious Food | Beautiful Moments | Amazing Experience</p>
+    <a href="#menu" class="btn">Explore Our Menu</a>
+</div>
+
+<!-- Menu -->
+<section id="menu">
+    <h2 class="heading">Our Special Menu</h2>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Fresh salad">
+            <h3>Fresh Garden Salad</h3>
+            <p>Fresh vegetables with delicious dressing.</p>
+            <div class="price">₹180</div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="Burger">
+            <h3>Cheese Burger</h3>
+            <p>Juicy burger with cheese and vegetables.</p>
+            <div class="price">₹220</div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Pizza">
+            <h3>Italian Pizza</h3>
+            <p>Classic pizza with cheese and toppings.</p>
+            <div class="price">₹350</div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Special pizza">
+            <h3>Special Pizza</h3>
+            <p>Our chef's special vegetable pizza.</p>
+            <div class="price">₹400</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Chefs -->
+<section class="chef" id="chefs">
+    <h2 class="heading">Meet Our Expert Chefs</h2>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600" alt="Head chef">
+            <h3>Chef Arjun</h3>
+            <p>Head Chef</p>
+            <p>Specialist in Indian Cuisine.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=600" alt="Chef preparing food">
+            <h3>Chef Priya</h3>
+            <p>Senior Chef</p>
+            <p>Specialist in Italian Cuisine.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1574966739987-65e38c3b8c1e?w=600" alt="Professional chef">
+            <h3>Chef Rahul</h3>
+            <p>Pastry Chef</p>
+            <p>Specialist in Desserts.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Restaurant Ambience -->
+<section id="ambience" class="ambience">
+    <h2 class="heading">Restaurant Ambience</h2>
+
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Restaurant dining area">
+
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600" alt="Restaurant interior">
+
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600" alt="Restaurant table setting">
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section id="reviews" class="chef">
+    <h2 class="heading">Customer Testimonials</h2>
+
+    <div class="container">
+
+        <div class="review">
+            <p>"Amazing food and wonderful service. I loved the atmosphere!"</p>
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <h3>- Rahul</h3>
+        </div>
+
+        <div class="review">
+            <p>"The food was delicious and the staff were very friendly."</p>
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <h3>- Priya</h3>
+        </div>
+
+        <div class="review">
+            <p>"A beautiful place for family dinners and celebrations."</p>
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <h3>- Arjun</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- Reservation -->
+<section class="reservation" id="reservation">
+    <h2 class="heading">Book Your Table</h2>
+
+    <form id="bookingForm">
+
+        <input type="text" placeholder="Your Full Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <input type="tel" placeholder="Phone Number"
+        pattern="[0-9]{10}" maxlength="10" required>
+
+        <input type="date" id="bookingDate" required>
+
+        <input type="time" required>
+
+        <select required>
+            <option value="">Select Number of Guests</option>
+            <option>1 Person</option>
+            <option>2 Persons</option>
+            <option>3 Persons</option>
+            <option>4 Persons</option>
+            <option>5 Persons</option>
+            <option>6 Persons</option>
+        </select>
+
+        <textarea placeholder="Special Requests (Optional)" rows="4"></textarea>
+
+        <button type="submit">Reserve Table</button>
+
+    </form>
+</section>
+
+<!-- Contact and Opening Hours -->
+<section id="contact" class="contact">
+    <h2 class="heading">Visit Our Restaurant</h2>
+
+    <h3>📍 Location</h3>
+    <p>MG Road, Vijayawada, Andhra Pradesh</p>
+
+    <h3>🕒 Opening Hours</h3>
+    <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
+    <p>Saturday - Sunday: 9:00 AM - 11:00 PM</p>
+
+    <h3>📞 Contact</h3>
+    <p>Phone: +91 9876543210</p>
+    <p>Email: royaltaste@example.com</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <h3>🍽 Royal Taste Restaurant</h3>
+    <p>Good Food | Great Taste | Happy Moments</p>
+    <p>© 2026 Royal Taste. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Set minimum reservation date to today
+const dateInput = document.getElementById("bookingDate");
+dateInput.min = new Date().toISOString().split("T")[0];
+
+// Reservation form
+document.getElementById("bookingForm").addEventListener("submit",
+function(event) {
+    event.preventDefault();
+
+    alert("Thank you! Your reservation request has been submitted.");
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
